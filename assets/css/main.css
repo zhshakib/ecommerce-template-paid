@@ -1014,9 +1014,9 @@ top: -1px;
 }
 
 .section {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -1035,9 +1035,7 @@ top: -1px;
 
 /* Section Title */
 .section-title {
-  text-align: center;
   margin-bottom: 40px;
-  padding: 0px 300px;
   position: relative;
   z-index: 5;
   position: relative;
@@ -1049,21 +1047,7 @@ top: -1px;
   text-transform: capitalize;
   position: relative;
   font-weight: 800;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
   position: relative;
-}
-
-.section-title h2::before {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  content: "";
-  background-color: #3BB77E;
-  height: 2px;
-  width: 50px;
-  margin-left: -25px;
-  border-radius: 2px;
 }
 
 .section-title p {
@@ -3355,163 +3339,156 @@ top: 2px;
 /*======================================
     Product CSS
 ========================================*/
-/* Single Product*/
-.single-product {
-  border: 1px solid #eee;
-  border-radius: 4px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  margin-top: 30px;
-  -webkit-box-shadow: 0px 0px 20px #00000012;
-  box-shadow: 0px 0px 20px #00000012;
-  padding: 8px;
+
+.single-product-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.single-product-card:hover {
   background: #fff;
 }
 
-.single-product .product-image {
-  overflow: hidden;
-  position: relative;
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 
-.single-product .product-image .sale-tag {
-  background: #f73232;
-  border-radius: 2px;
-  font-size: 12px;
+.tag {
+  background: #ff4d6d;
   color: #fff;
-  font-weight: bold;
-  position: absolute;
-  top: 0;
-  padding: 5px 10px;
-  left: 0;
-  z-index: 22;
-}
-
-.single-product .product-image .new-tag {
-  background: #3BB77E;
-  border-radius: 2px;
+  padding: 2px 10px;
+  border-radius: 0 0 6px 6px;
   font-size: 12px;
-  color: #fff;
   font-weight: bold;
-  position: absolute;
-  top: 0;
-  padding: 5px 10px;
-  left: 0;
-  z-index: 22;
 }
 
-.single-product .product-image .button {
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-  bottom: -60px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  opacity: 0;
-  visibility: hidden;
+.country {
+  font-size: 12px;
+  color: #555;
 }
 
-.single-product .product-image .button .btn {
-  padding: 12px 20px;
-  font-size: 13px;
-  font-weight: 600;
-  width: 140px;
-}
-
-.single-product .product-image .button .btn i {
-  font-size: 18px;
-    position: relative;
-    top: 2px;
-}
-
-.single-product .product-image img {
+.product-img {
   width: 100%;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+  position: relative;
+
 }
 
-.single-product:hover .product-image .button {
-  bottom: 30px;
-  opacity: 1;
-  visibility: visible;
-}
-
-.single-product:hover .product-image img {
-  -webkit-transform: scale(1.1);
+.product-img img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 0 auto;
+  display: block;
+  transition: transform 0.3s ease;
   transform: scale(1.1);
 }
 
-.single-product .product-info {
-  padding: 20px;
-  background-color: #fff;
+.product-img img:hover {
+  transform: scale(1);
+  border: none;
 }
 
-.single-product .product-info .category {
-  color: #888;
-  font-size: 13px;
-  display: block;
-  margin-bottom: 2px;
+.product-info{
+  text-align: left;
 }
 
-.single-product .product-info .title a {
-  font-size: 16px;
-  font-weight: 700;
-  color: #081828;
+
+.product-info .title {
+  width: 70%;
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0 0;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px),
-(max-width: 767px) {
-  .single-product .product-info .title a {
-    font-size: 15px;
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.rating i {
+  color: #ffc107;
+  font-size: 14px;
+}
+
+.rating span {
+  font-size: 12px;
+  color: #777;
+  margin-left: 10px;
+}
+
+.price-add {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Write Price add for mobile UI */
+
+.custom-margin-right{
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  .price-add {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
-.single-product .product-info .title a:hover {
-  color: #3BB77E;
+.prices{
+  display: flex;
+  flex-direction: column;
 }
 
-.single-product .product-info .review {
-  margin-top: 5px;
+.price {
+  color: #28a745;
+  font-weight: bold;
+  font-size: 32px;
 }
 
-.single-product .product-info .review li {
-  display: inline-block;
-}
-
-.single-product .product-info .review li i {
-  color: #fecb00;
-  font-size: 13px;
-}
-
-.single-product .product-info .review li span {
-  display: inline-block;
-  margin-left: 4px;
-  color: #888;
-  font-size: 13px;
-}
-
-.single-product .product-info .price {
-  margin-top: 15px;
-}
-
-.single-product .product-info .price span {
-  font-size: 17px;
-  font-weight: 700;
-  color: #3BB77E;
-  display: inline-block;
-}
-
-.single-product .product-info .price .discount-price {
-  margin: 0;
-  color: #aaaaaa;
+.old-price {
+  font-size: 20px;
   text-decoration: line-through;
-  font-weight: normal;
-  margin-left: 10px;
-  font-size: 14px;
-  display: inline-block;
+  color: #999;
+  margin-left: 20px;
 }
 
-/* End Single Product */
+.add-btn {
+  background: #e6f9ee;
+  color: #28a745;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.add-btn:hover {
+  background: #28a745;
+  color: #fff;
+}
+/* End Product */
+
 .trending-product {
   background-color: #f9f9f9;
 }
