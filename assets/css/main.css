@@ -953,8 +953,9 @@ ol {
 }
 
 .breadcrumbs .breadcrumb-nav {
-  text-align: right;
+  text-align: left;
 }
+
 
 @media (max-width: 767px) {
   .breadcrumbs .breadcrumb-nav {
@@ -3455,10 +3456,12 @@ ol {
 }
 
 .product-info .title {
-  width: 70%;
   font-size: 32px;
   font-weight: bold;
   margin: 10px 0 0;
+}
+.product-info .title a:hover {
+  color: #3bb77e;
 }
 
 .rating {
@@ -3763,14 +3766,18 @@ ol {
 }
 
 .item-details .product-info .title {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 10px;
+	font-size: 36px;
+	font-weight: 800;
+	margin-bottom: 20px;
 }
 
+
+
+
 @media (max-width: 767px) {
+
   .item-details .product-info .title {
-    font-size: 18px;
+    font-size: 30px;
   }
 }
 
@@ -3797,16 +3804,16 @@ ol {
 }
 
 .item-details .product-info .price {
-  color: #081828;
-  display: block;
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 15px;
+	color: #081828;
+	display: block;
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 15px;
 }
 
 @media (max-width: 767px) {
   .item-details .product-info .price {
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 
@@ -4099,13 +4106,20 @@ ol {
 }
 
 .item-details .product-info .cart-button {
-  width: 100%;
+  width: 95%;
 }
 
 .item-details .product-info .cart-button .btn {
-  width: 100%;
+  width: 90%;
   height: 46px;
   padding: 0;
+  position: absolute;
+  bottom: 0;
+  margin: 0px auto;
+}
+
+.custom-show{
+  position: relative;
 }
 
 .item-details .product-info .wish-button {
@@ -4114,9 +4128,17 @@ ol {
 }
 
 @media (max-width: 767px) {
-  .item-details .product-info .wish-button {
-    margin-top: 12px;
+  .custom-show{
+    position: static;
   }
+
+  .item-details .product-info .cart-button .btn{
+    width: 100%;
+    margin-top: 20px;
+    position: static;
+    margin-left: 7px;
+  }
+  
 }
 
 .item-details .product-info .wish-button .btn {
@@ -4311,13 +4333,14 @@ ol {
 }
 
 .product-details-info .info-body h4 {
-  font-size: 18px;
+  font-size: 26px;
   font-weight: 500;
   margin-bottom: 20px;
 }
 
 .product-details-info .info-body p {
   margin: 20px 0;
+  text-align: justify;
 }
 
 .product-details-info .info-body .features li {
